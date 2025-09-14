@@ -9,7 +9,7 @@ const steps = ["Ordered", "Shipped", "Out for Delivery", "Delivered"];
 
 export default function OrdersPage() {
   const { orders, updateOrderStatus } = useOrdersStore();
-  const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
+  const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
 
   // ✅ Auto-progress orders over time
   useEffect(() => {

@@ -1,9 +1,25 @@
 import { create } from "zustand";
-// import { CartItem } from "./useCartStore"; // Import if it's in another file, or redefine it here
+// import { CartItem } from "./useCartStore"; 
+// Import if it's in another file, or redefine it here
 
+// interface OrderItem {
+//   id: string;
+//   name: string;
+//   image: string;
+//   price: number;
+//   quantity: number;
+// }
+interface CartItem {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+}
 interface Order {
   id: string;
-  // items: CartItem[];
+  items: CartItem[];
+  //items:OrderItem[];
   totalPrice: number;
   date: string;
   customer: {

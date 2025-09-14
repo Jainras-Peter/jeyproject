@@ -9,7 +9,7 @@ import { formatCurrency } from "../lib/utils";
 export default function CartDrawer() {
   const isOpen = useUIStore((s) => s.isCartOpen);
   const close = useUIStore((s) => s.closeCart);
-  const { cart, totalItems, totalPrice, increaseQuantity, decreaseQuantity, clearCart, checkout } = useCartStore();
+  const { cart, totalItems, totalPrice, increaseQuantity, decreaseQuantity, clearCart} = useCartStore();
 
   if (!isOpen) return null;
 

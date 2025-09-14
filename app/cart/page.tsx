@@ -43,7 +43,7 @@ export default function CartPage() {
           >
             <div className="flex items-center space-x-4">
               <Image
-                src={item.image}
+                src={item.image || "/placeholder.png"}
                 alt={item.name}
                 width={80}
                 height={80}

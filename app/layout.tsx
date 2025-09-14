@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const totalItems = useCartStore((state) => state.totalItems);
-  const totalOrders = useOrdersStore((state) => state.totalOrders);
+  const totalOrders = useOrdersStore((state) => state.orders.length);
 
   const [query, setQuery] = useState("");
   const router = useRouter();

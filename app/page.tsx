@@ -75,7 +75,7 @@ export default function HomePage() {
                 ? p.price - (p.price * p.discount) / 100
                 : p.price;
 
-              const isBestseller = p.id === 1 || p.id === 2;
+              const isBestseller =Number(p.id) === 1 || Number(p.id) === 2;
 
               return (
                 <div
@@ -88,7 +88,7 @@ export default function HomePage() {
                     </span>
                   )}
 
-                  {p.isBestseller && (
+                  {isBestseller && (
                     <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded shadow-sm">
                       Bestseller
                     </span>
@@ -117,7 +117,7 @@ export default function HomePage() {
                       <p className="text-lg font-bold">{formatCurrency(p.price)}</p>
                     )}
                     <button
-                      onClick={() => addToCart(p)}
+                      onClick={() => addToCart({...p,quantity:1})}
                       className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
                     >
                       🛒 Add to Cart

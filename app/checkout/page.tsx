@@ -43,10 +43,10 @@ export default function CheckoutPage() {
       setValue("city", parsed.city);
       setValue("postal", parsed.postal);
       // Directly place the order if details are saved
-      placeOrder(parsed);
+      // placeOrder(parsed);
     }
     setLoading(false);
-  }, [cart]);
+  }, [cart,setValue]);
 
   const placeOrder = (data: FormData) => {
     const order = {
