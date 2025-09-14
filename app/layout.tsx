@@ -6,19 +6,19 @@ import { ShoppingCart, BarChart2, Package, Search, User, Menu, X, Home as HomeIc
 import { useCartStore } from "../store/useCartStore";
 import { useOrdersStore } from "../store/useOrdersStore";
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const totalItems = useCartStore((state) => state.totalItems);
   const totalOrders = useOrdersStore((state) => state.orders.length);
 
-  const [query, setQuery] = useState("");
-  const router = useRouter();
+  // const [query] = useState("");
+  // const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push(`/?search=${encodeURIComponent(query)}`);
-  };
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   router.push(`/?search=${encodeURIComponent(query)}`);
+  // };
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

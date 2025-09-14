@@ -87,29 +87,29 @@ export default function CheckoutPage() {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium">Full name</label>
+          <label htmlFor="name" className="block text-sm font-medium">Full name</label>
           <input {...register("name")} className="w-full px-3 py-2 rounded border" />
           {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium">Email</label>
           <input {...register("email")} className="w-full px-3 py-2 rounded border" />
           {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Address</label>
+          <label htmlFor="address" className="block text-sm font-medium">Address</label>
           <input {...register("address")} className="w-full px-3 py-2 rounded border" />
         </div>
 
         <div className="flex gap-3">
           <div className="flex-1">
-            <label className="block text-sm font-medium">City</label>
+            <label htmlFor="city" className="block text-sm font-medium">City</label>
             <input {...register("city")} className="w-full px-3 py-2 rounded border" />
           </div>
           <div className="w-36">
-            <label className="block text-sm font-medium">Postal</label>
+            <label htmlFor="postal" className="block text-sm font-medium">Postal</label>
             <input {...register("postal")} className="w-full px-3 py-2 rounded border" />
           </div>
         </div>

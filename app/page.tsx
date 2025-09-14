@@ -1,14 +1,23 @@
 "use client";
+export const dynamic = "force-dynamic";
 
 import Image from "next/image";
 import products from "../data/products";
 import { useCartStore } from "../store/useCartStore";
 import { formatCurrency } from "../lib/utils";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Search } from "lucide-react";
 
-export default function HomePage() {
+export default function HomePage(){
+  return(
+    <Suspense fallback={<div>Loading....</div>}>
+      <HomeContent />
+    </Suspense>
+  )
+}
+
+function HomeContent() {
   const addToCart = useCartStore((state) => state.addToCart);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -18,12 +27,19 @@ export default function HomePage() {
 
   const rawCategory = searchParams.get("category") || "all";
   const categoryParam = decodeURIComponent(rawCategory).trim();
+  
+  const [mounted,setMounted]=useState(false);
+
+  useEffect(()=>{
+    setMounted(true);
+  },[]);
 
   useEffect(() => {
+    if(!mounted) return;
     if (categoryParam.toLowerCase() === "home & kitchen") {
       router.replace(`/?category=home`);
     }
-  }, [categoryParam, router]);
+  }, [categoryParam, router,mounted]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

@@ -67,9 +67,9 @@ export default function ProductCard(p: ProductProps) {
         <button
           onClick={() =>
             addToCart({
-              id: p.id,
+              id: String(p.id),
               name: p.name,
-              description: p.description,
+              quantity:1,
               price: p.price,
               image: p.image,
             })

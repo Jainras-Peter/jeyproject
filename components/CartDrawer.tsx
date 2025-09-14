@@ -15,7 +15,7 @@ export default function CartDrawer() {
 
   return (
     <div className="fixed inset-0 z-50">
-      <div className="absolute inset-0 bg-black/50" onClick={close} />
+      <button className="absolute inset-0 bg-black/50" onClick={close} />
       <aside className="absolute right-0 top-0 h-full w-full sm:w-96 bg-white dark:bg-gray-800 shadow-xl p-6 overflow-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Your Cart ({totalItems})</h2>
