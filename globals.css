@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+img {
+  content-visibility: auto; /* improves perf */
+}
+
+.focus-ring:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 3px;
+}
+
